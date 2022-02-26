@@ -1,13 +1,13 @@
 import 'package:flutter_triple/flutter_triple.dart';
 import '../../../../../shared/domain/helpers/errors/failure.dart';
 import '../../../domain/entities/coffe_image_entity.dart';
-import '../../../domain/usecases/get_color_background_usecase_impl.dart';
-import '../../../domain/usecases/get_image_coffee_usecase_impl.dart';
+import '../../../domain/usecases/get_color_background_usecase.dart';
+import '../../../domain/usecases/get_image_coffee_usecase.dart';
 import 'cofee_state.dart';
 
 class CoffeeStore extends StreamStore<Failure, CoffeeState> {
-  final GetImageCoffeeUsecaseImpl _getImageCoffee;
-  final GetColorBackgroundUsecaseImpl _getColor;
+  final GetImageCoffeeUsecase _getImageCoffee;
+  final GetColorBackgroundUsecase _getColor;
   CoffeeStore(this._getImageCoffee, this._getColor)
       : super(CoffeeState(image: const CoffeeImageEntity(image: '')));
 

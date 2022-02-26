@@ -4,7 +4,7 @@ import '../entities/coffe_image_entity.dart';
 import '../repositories/coffee_repository.dart';
 import 'get_image_coffee_usecase.dart';
 
-class GetImageCoffeeUsecaseImpl implements GetIamgeCoffeeUsecase {
+class GetImageCoffeeUsecaseImpl implements GetImageCoffeeUsecase {
   final CoffeeRepository _repository;
 
   const GetImageCoffeeUsecaseImpl(this._repository);
