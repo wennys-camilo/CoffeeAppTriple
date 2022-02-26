@@ -1,4 +1,4 @@
-import 'package:coffee_app/app/modules/coffee/coffee_module.dart';
+import 'modules/coffee/coffee_module.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

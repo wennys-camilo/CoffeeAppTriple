@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import '../../domain/entities/coffe_image_entity.dart';
-import '../mappers/coffee_image_mapper.dart';
 import '../../../../shared/domain/helpers/errors/failure.dart';
+import '../../domain/entities/coffe_image_entity.dart';
 import '../../infra/datasources/coffee_remote_datasource.dart';
+import '../mappers/coffee_image_mapper.dart';
 
 class CoffeeRemoteDataSourceImpl implements CoffeeRemoteDataSource {
   final Dio _dio;

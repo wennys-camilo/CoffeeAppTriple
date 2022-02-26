@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../domain/entities/coffe_image_entity.dart';
 
 class CoffeeState {

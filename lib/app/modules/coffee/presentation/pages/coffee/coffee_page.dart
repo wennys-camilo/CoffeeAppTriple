@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_triple/flutter_triple.dart';
+import 'package:transparent_image/transparent_image.dart';
 import '../../../../../shared/domain/helpers/errors/failure.dart';
 import 'cofee_state.dart';
 import 'coffee_store.dart';
@@ -22,12 +23,11 @@ class _CoffePageState extends ModularState<CoffePage, CoffeeStore> {
   @override
   Widget build(BuildContext context) {
     return ScopedBuilder<CoffeeStore, Failure, CoffeeState>(
-      store: store,
-      onState: (context, state) => BodySucess(state: state, store: store),
-      onError: (context, error) =>
-          BodyFailure(store: store, message: error!.message),
-      onLoading: (context) => const BodyLoading(),
-    );
+        store: store,
+        onState: (context, state) => BodySucess(state: state, store: store),
+        onError: (context, error) =>
+            BodyFailure(store: store, message: error!.message),
+        onLoading: (context) => const BodyLoading());
   }
 }
 
@@ -48,8 +48,9 @@ class BodyFailure extends StatelessWidget {
           children: [
             Text(message ?? 'Falha ao busucar imagem!'),
             IconButton(
-                onPressed: () async => await store.getImage(),
-                icon: const Icon(Icons.refresh))
+              onPressed: () async => await store.getImage(),
+              icon: const Icon(Icons.refresh),
+            )
           ],
         ),
       ),
@@ -80,10 +81,17 @@ class BodySucess extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: state.backgroundColor ?? Colors.white,
-        body: Center(child: Image.network(state.image.image)),
+        body: Center(
+          child: FadeInImage.memoryNetwork(
+            placeholder: kTransparentImage,
+            image: state.image.image,
+          ),
+        ),
         floatingActionButton: FloatingActionButton.small(
+          backgroundColor:
+              state.backgroundColor ?? Theme.of(context).primaryColor,
           onPressed: () async => await store.getImage(),
-          child: const Icon(Icons.refresh),
+          child: const Icon(Icons.refresh, color: Colors.white),
         ),
       ),
     );

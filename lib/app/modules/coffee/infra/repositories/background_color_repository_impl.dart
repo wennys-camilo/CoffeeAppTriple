@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:palette_generator/palette_generator.dart';
-import 'package:coffee_app/app/shared/domain/helpers/errors/failure.dart';
+import '../../../../shared/domain/helpers/errors/failure.dart';
 import '../../domain/repositories/background_color_repository.dart';
 
 class BackgroundColorRepositoryImpl implements BackgroundColorRepository {

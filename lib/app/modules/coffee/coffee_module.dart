@@ -1,6 +1,6 @@
-import 'package:coffee_app/app/modules/coffee/infra/repositories/background_color_repository_impl.dart';
-import 'package:coffee_app/app/modules/coffee/presentation/pages/coffee/coffee_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'infra/repositories/background_color_repository_impl.dart';
+import 'presentation/pages/coffee/coffee_store.dart';
 import 'domain/usecases/get_color_background_usecase_impl.dart';
 import 'domain/usecases/get_image_coffee_usecase_impl.dart';
 import 'external/datasources/coffee_remote_datasource_impl.dart';

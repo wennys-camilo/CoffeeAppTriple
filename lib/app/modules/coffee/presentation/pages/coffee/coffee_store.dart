@@ -1,7 +1,7 @@
-import 'package:coffee_app/app/modules/coffee/domain/usecases/get_color_background_usecase_impl.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 import '../../../../../shared/domain/helpers/errors/failure.dart';
 import '../../../domain/entities/coffe_image_entity.dart';
+import '../../../domain/usecases/get_color_background_usecase_impl.dart';
 import '../../../domain/usecases/get_image_coffee_usecase_impl.dart';
 import 'cofee_state.dart';
 
